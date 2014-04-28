@@ -44,7 +44,7 @@ class webm {
 									 ' -vcodec '.$this->codec.
 									 ' -an'.
 									 ' -t '.$this->max_time.
-									 " -vf scale=\"'if(gt(a,4/3),$max_w,-1)':'if(gt(a,4/3),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
+									 " -vf scale=\"'if(gte(iw,ih),$max_w,-1)':'if(gte(iw,ih),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
 									 ' -y '.$thumbnail_location.
 									 ' </dev/null 2>&1';
 				break;
@@ -52,7 +52,7 @@ class webm {
 				$this->exec_string = 'ffmpeg -i '.$this->input_file.
 									 ' -t '.$this->max_time.
 									 ' -r 10 '.
-									 " -vf scale=\"'if(gt(a,4/3),$max_w,-1)':'if(gt(a,4/3),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
+									 " -vf scale=\"'if(gte(iw,ih),$max_w,-1)':'if(gte(iw,ih),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
 									 ' -y '.$thumbnail_location.
 									 ' </dev/null 2>&1';
 				break;
