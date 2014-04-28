@@ -47,6 +47,7 @@ class webm {
 									 " -vf scale=\"'if(gt(a,4/3),$max_w,-1)':'if(gt(a,4/3),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
 									 ' -y '.$thumbnail_location.
 									 ' </dev/null 2>&1';
+				break;
 			case 'gif':
 				$this->exec_string = 'ffmpeg -i '.$this->input_file.
 									 ' -t '.$this->max_time.
@@ -54,6 +55,7 @@ class webm {
 									 " -vf scale=\"'if(gt(a,4/3),$max_w,-1)':'if(gt(a,4/3),-1,$max_h)'\",drawtext=\"fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf:  text='$overlay': fontcolor=white: x=2: y=(h-text_h)\" ".
 									 ' -y '.$thumbnail_location.
 									 ' </dev/null 2>&1';
+				break;
 		}
 
 		exec($this->exec_string,$output,$return_var);
